@@ -1,0 +1,23 @@
+{
+  "name": "hltv-score-widget",
+  "version": "1.0.0",
+  "description": "HLTV score widget for OBS",
+  "main": "score_server.js",
+  "bin": "score_server.js",
+  "pkg": {
+    "assets": [
+      "public/**/*"
+    ],
+    "targets": [
+      "node18-win-x64"
+    ]
+  },
+  "scripts": {
+    "start": "node score_server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
