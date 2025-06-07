@@ -11,7 +11,7 @@ puppeteer.use(StealthPlugin()); // Use default stealth evasions
 
 // Initialize Express server
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Default score state
 let scoreData = {
