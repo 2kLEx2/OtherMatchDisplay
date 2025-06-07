@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Widget Setup</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      padding: 2rem;
+    }
+    input, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      width: 100%;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>OBS Widget Setup</h1>
+  <label>PandaScore API Token:
+    <input type="text" id="apiToken" placeholder="Your PandaScore API Key">
+  </label>
+  <label>Match ID:
+    <input type="text" id="matchId" placeholder="Enter Match ID">
+  </label>
+  <button onclick="generateURL()">Generate Display URL</button>
+  <p id="output"></p>
+
+  <script>
+    function generateURL() {
+      const token = encodeURIComponent(document.getElementById('apiToken').value.trim());
+      const matchId = encodeURIComponent(document.getElementById('matchId').value.trim());
+      const url = `display.html?token=${token}&match=${matchId}`;
+      document.getElementById('output').innerHTML = `<strong>Copy this URL into OBS:</strong><br><code>${url}</code>`;
+    }
+  </script>
+</body>
+</html>
